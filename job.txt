@@ -1,0 +1,11 @@
+Các page  :
+. Sign in / Sign up 
+. HomePage 
+. Lộ trình
+. Học 
+. Blog
+.Trang viết blog 
+.Trang xem khoas hoc
+.......................
+. Đăng kí firebase( auth +  firestore )
+.Slider ( use React Slick )
