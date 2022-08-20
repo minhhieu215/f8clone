@@ -8,6 +8,10 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-size: 100%;
     font-family: 'Montserrat', sans-serif;
+    &::selection { 
+      color:white;
+      background : #f05123;
+    }
   }
   html {
     font-size: 62.5%;

@@ -1,5 +1,5 @@
-import images from '../../assets/images'
-import { themeBanner } from '../../theme'
+import images from '../assets/images'
+import { themeBanner } from '../theme'
 interface IProps {
     title: string
     introduce: string

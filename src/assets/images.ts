@@ -6,7 +6,8 @@
     bannerYoutube : require('./Banner_03_youtube.png'),
     bannerHtmlCssPro:require('./Banner_F8_htmlcsspro.png'),
     bannerReact:require('./Banner_web_ReactJS.png'),
-    bgHtmlCssPro : require('./bgCourseHtml.png')
+    bgHtmlCssPro : require('./bgCourseHtml.png'),
+    post1 : require('./post1.png')
 }
 
 export default images

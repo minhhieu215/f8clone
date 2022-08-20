@@ -1,6 +1,7 @@
 import { Col, Row } from 'antd'
 import React, { ReactNode } from 'react'
 import Home from '../../pages/Home'
+import { Footer } from './Footer'
 import Header from './Header'
 import Sidebar from './Sidebar'
 import { Content } from './styled'
@@ -22,7 +23,7 @@ const DefaultLayout: React.FC<IProps> = ({ children }) => {
                 </Col>
             </Content>
             <Row>
-                <footer style={{ height: '1000px' }}>Footer</footer>
+                <Footer></Footer>
             </Row>
         </div>
     )
