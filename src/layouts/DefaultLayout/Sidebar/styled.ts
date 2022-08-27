@@ -4,14 +4,18 @@ export const RowStyled = styled.div
 `
 position:sticky;
 top:80px;
-width:100%;
+width:96px;
+padding-inline:8px;
 display:flex;
 flex-direction:column;
 align-items:center;
+margin-bottom:10px;
+margin-top:8px;
+
 `
 
 export const PlusStyled = styled.div`
-height: 38px;
+height: 44px;
 background: ${props=>props.theme.blue};
 border-radius: 50%;
 color: white;
@@ -22,7 +26,7 @@ justify-content:center;
 font-size: 2.2rem;
 cursor:pointer;
 
-}
+
 &:hover > span{
     transform:scale(1.4);
     transition : transform 0.3s ease ;
@@ -34,11 +38,11 @@ export const SidebarContainer = styled.div`
     border-radius:16px;
     aspect-ratio:1/1;
     display:flex;
+    color:black;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     margin-top:14px;
-    background-color: #e8ebed;
     cursor:pointer;
     p{
         margin:0;
@@ -51,4 +55,11 @@ export const SidebarContainer = styled.div`
     &:hover .icon {
         color:black;
     }
+`
+export const LinkStyled = styled.div`
+    .active ${SidebarContainer} {
+            background-color: #e8ebed;
+    }
+    
+
 `

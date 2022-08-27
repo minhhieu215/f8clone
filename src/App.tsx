@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
-import { DefaultLayout } from './layouts/DefaultLayout'
 import { AuthLayout } from './layouts/AuthLayout'
+import { DefaultLayout } from './layouts/DefaultLayout'
+import { CoursePage, CoursePageContainer } from './pages/CoursePageContainer'
+import Home from './pages/Home'
 function App() {
     return (
         <Routes>
@@ -9,7 +11,23 @@ function App() {
                 path="/"
                 element={
                     <DefaultLayout>
-                        <h1>PAGE</h1>
+                        <Home />
+                    </DefaultLayout>
+                }
+            />
+            <Route
+                path="/courses"
+                element={
+                    <DefaultLayout>
+                        <CoursePageContainer />
+                    </DefaultLayout>
+                }
+            />
+            <Route
+                path="/courses/html-css"
+                element={
+                    <DefaultLayout>
+                        <CoursePage />
                     </DefaultLayout>
                 }
             />

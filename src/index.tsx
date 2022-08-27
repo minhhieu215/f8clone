@@ -7,16 +7,19 @@ import 'slick-carousel/slick/slick.css'
 import { ThemeProvider } from 'styled-components'
 import App from './App'
 import GlobalStyles from './components/GlobalStyles/GlobalStyles'
+import AppProvider from './context/AppContext'
 import './index.css'
 import theme from './theme'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <ThemeProvider theme={theme}>
-                <GlobalStyles />
-                <App />
-            </ThemeProvider>
+            <AppProvider>
+                <ThemeProvider theme={theme}>
+                    <GlobalStyles />
+                    <App />
+                </ThemeProvider>
+            </AppProvider>
         </BrowserRouter>
     </React.StrictMode>
 )

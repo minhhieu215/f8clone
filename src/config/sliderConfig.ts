@@ -7,7 +7,6 @@ interface IProps {
     buttonText: string
     bgColor:string
 }
-console.log(themeBanner)
 const sliderConfig: Array<IProps> = [
     {
         title:'Học ReactJS Miễn Phí!',

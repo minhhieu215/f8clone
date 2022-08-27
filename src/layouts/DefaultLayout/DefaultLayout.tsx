@@ -1,5 +1,6 @@
 import { Col, Row } from 'antd'
 import React, { ReactNode } from 'react'
+import styled from 'styled-components'
 import Home from '../../pages/Home'
 import { Footer } from './Footer'
 import Header from './Header'
@@ -8,6 +9,10 @@ import { Content } from './styled'
 interface IProps {
     children: ReactNode
 }
+const ColStyled = styled.div`
+    padding: 0 40px 0 20px;
+    width: calc(100% - 96px);
+`
 const DefaultLayout: React.FC<IProps> = ({ children }) => {
     return (
         <div>
@@ -15,12 +20,14 @@ const DefaultLayout: React.FC<IProps> = ({ children }) => {
                 <Header></Header>
             </Row>
             <Content>
-                <Col span={2}>
+                {/* Div dung de giu sticky position */}
+                <div>
                     <Sidebar></Sidebar>
-                </Col>
-                <Col span={22}>
-                    <Home></Home>
-                </Col>
+                </div>
+                <ColStyled>
+                    {/* Page */}
+                    {children}
+                </ColStyled>
             </Content>
             <Row>
                 <Footer></Footer>

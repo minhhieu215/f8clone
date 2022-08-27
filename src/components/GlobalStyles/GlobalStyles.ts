@@ -7,7 +7,8 @@ const GlobalStyles = createGlobalStyle`
     margin:0;
     box-sizing: border-box;
     font-size: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat',Arial,Helvetica,sans-serif;
+
     &::selection { 
       color:white;
       background : #f05123;
@@ -15,6 +16,10 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     font-size: 62.5%;
+    line-height:1.15;
+  }
+  li{
+    list-style:none;
   }
   body{
     font-size : 1.6rem;

@@ -82,3 +82,46 @@ font-size:1.5rem;
     color:gray;
 }
 `
+export const CourseDetailItemContainerStyled = styled.div<{isActive:boolean, onClick:any}>`
+  background: #f5f5f5;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    cursor:pointer;
+    user-select:none;
+    .content {
+        padding: 14px 30px 14px 48px;
+        font-size: 1.6rem;
+        position:relative;
+    }
+    .content:before{
+            content:${props=> props.isActive ?'"-"': '"+"'};
+            font-size: 26px;
+    font-weight: 300;
+    left: 20px;
+    position: absolute;
+    top: 48%;
+    color:${props=>props.theme.primaryColor};
+   transform: translateY(-50%); 
+    }
+    .floatRight{
+        float:right;
+    }
+  
+`
+export const CourseDetailItemHide = styled.div`
+padding: 0 16px 0 48px;
+min-height: 48px;
+font-size:1.4rem;
+align-items: center;
+    display: flex;   
+     justify-content: space-between;
+     border-bottom: solid 1px rgba(0,0,0,.03) ;
+.floatRight{
+        float:right;
+    }
+  .floatleft{
+      display: flex;   
+    align-items: center;
+    gap:12px;
+  }
+`

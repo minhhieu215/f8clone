@@ -1,6 +1,7 @@
 const theme = {
 primaryColor : "#f05123",
-blue:"#1473e6"
+blue:"#1473e6",
+heightHeader : "66px",
 }
 export const themeBanner = {
     bannerHtmlCssPro :"linear-gradient(to right, rgb(104, 40, 250), rgb(255, 186, 164))",

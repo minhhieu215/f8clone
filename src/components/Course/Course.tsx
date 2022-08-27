@@ -3,7 +3,7 @@ import { Avatar } from 'antd'
 import React from 'react'
 import { ButtonCourse, CourseContainer, CourseImg, UserPost } from './styled'
 interface IProps {
-    courseName: string
+    courseName?: string
     price?: string
     numberMember?: string
     userAvatar?: string
@@ -18,7 +18,7 @@ const Course: React.FC<IProps> = ({ courseName, price, numberMember, userAvatar,
                     <ButtonCourse>Xem khóa học</ButtonCourse>
                 </div>
             </CourseImg>
-            <h1 style={{ margin: '10px 0' }}>{courseName}</h1>
+            {courseName && <h1 style={{ margin: '10px 0' }}>{courseName}</h1>}
             {price && <p className="price">{price}đ</p>}
             {numberMember && (
                 <p className="numberMember">

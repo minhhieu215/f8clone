@@ -7,7 +7,7 @@
     bannerHtmlCssPro:require('./Banner_F8_htmlcsspro.png'),
     bannerReact:require('./Banner_web_ReactJS.png'),
     bgHtmlCssPro : require('./bgCourseHtml.png'),
-    post1 : require('./post1.png')
+    post1 : require('./post1.png') ,
 }
 
 export default images

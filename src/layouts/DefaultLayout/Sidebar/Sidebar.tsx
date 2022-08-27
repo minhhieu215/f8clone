@@ -8,10 +8,10 @@ const Sidebar = () => {
             <PlusStyled>
                 <span>+</span>
             </PlusStyled>
-            <SidebarItem name="Home" icon={HomeFilled} />
-            <SidebarItem name="Lộ trình" icon={RiseOutlined} />
-            <SidebarItem name="Học" icon={BulbOutlined} />
-            <SidebarItem name="Blog" icon={FileTextOutlined} />
+            <SidebarItem name="Home" icon={HomeFilled} link="home" />
+            <SidebarItem name="Lộ trình" icon={RiseOutlined} link="learning-paths" />
+            <SidebarItem name="Học" icon={BulbOutlined} link="courses" />
+            <SidebarItem name="Blog" icon={FileTextOutlined} link="blog" />
         </RowStyled>
     )
 }
