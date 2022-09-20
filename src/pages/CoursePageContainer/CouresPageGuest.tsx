@@ -1,8 +1,8 @@
-import { CheckOutlined, ConsoleSqlOutlined } from '@ant-design/icons'
-import { Button } from 'antd'
-import { useContext } from 'react'
+import { CheckOutlined } from '@ant-design/icons'
+import React from 'react'
 import { CourseDetailItem } from '../../components/Course'
 import { AppContext } from '../../context/AppContext'
+
 import {
     ButtonStyled,
     CouresPageContainer,
@@ -13,9 +13,37 @@ import {
     Text,
     TitleStyled
 } from './styled'
+interface IHideContent {
+    title: string
+    length: string
+}
+interface IContent {
+    title: string
+    contentNumber: number
+    hideContent: Array<IHideContent>
+}
+interface IProps {
+    title: string
+    introduce: string
+    whatYouLearn: Array<String>
+    chapterNumber: number
+    lessonNumber: number
+    length: string
+    level: string
+    content?: Array<IContent>
+}
+const CouresPageGuest: React.FC<IProps> = ({
+    title,
+    introduce,
+    whatYouLearn,
+    chapterNumber,
+    lessonNumber,
+    length,
+    level,
+    content
+}) => {
+    const { numberActive, setNumberActive } = React.useContext(AppContext)
 
-const CoursePage = () => {
-    const { numberActive, setNumberActive } = useContext(AppContext)
     const handleClick = () => {
         if (numberActive == 2) {
             setNumberActive(0)
@@ -24,49 +52,23 @@ const CoursePage = () => {
         }
     }
     const isActiveAll = numberActive == 2
+
     return (
         <CouresPageContainer>
             <div className="courseDetail">
                 <div>
-                    <TitleStyled size="3.2rem">HTML, CSS từ Zero đến Hero</TitleStyled>
-                    <Text>
-                        Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.
-                    </Text>
+                    <TitleStyled size="3.2rem">{title}</TitleStyled>
+                    <Text>{introduce}</Text>
                 </div>
                 <div>
                     <TitleStyled>Bạn sẽ học được gì?</TitleStyled>
                     <CourseDetailList>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Biết cách xây dựng giao diện web với HTML,
-                            CSS
-                        </li>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Biết cách đặt tên class CSS theo chuẩn BEM
-                        </li>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Làm chủ Flexbox khi dựng bố cục website
-                        </li>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Sở hữu 2 giao diện web khi học xong khóa học
-                        </li>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Biết cách tự tạo động lực cho bản thân
-                        </li>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Biết cách làm giao diện web responsive
-                        </li>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Biết cách tự tạo động lực cho bản thân
-                        </li>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Biết cách tự học những kiến thức mới
-                        </li>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Học được cách làm UI chỉn chu, kỹ tính
-                        </li>
-                        <li>
-                            <CheckOutlined className="icon"></CheckOutlined>Nhận chứng chỉ khóa học do F8 cấp
-                        </li>
+                        {whatYouLearn.map((content: any) => (
+                            <li>
+                                <CheckOutlined className="icon"></CheckOutlined>
+                                {content}
+                            </li>
+                        ))}
                     </CourseDetailList>
                 </div>
                 <div>
@@ -75,16 +77,16 @@ const CoursePage = () => {
                         <div>
                             <ul>
                                 <li>
-                                    <strong>13</strong>
+                                    <strong>{chapterNumber}</strong>
                                     <span> chương</span>
                                 </li>
                                 <li>
-                                    <strong>163</strong>
+                                    <strong>{lessonNumber}</strong>
                                     <span> bài học</span>
                                 </li>
                                 <li>
                                     <span>Thời lượng </span>
-                                    <strong> 29 giờ 57 phút</strong>
+                                    <strong>{length}</strong>
                                 </li>
                             </ul>
                         </div>
@@ -93,8 +95,9 @@ const CoursePage = () => {
                         </ButtonStyled>
                     </CourseHeadWrapper>
                     <CourseContent>
-                        <CourseDetailItem />
-                        <CourseDetailItem />
+                        {content?.map((cont: any) => (
+                            <CourseDetailItem content={cont} />
+                        ))}
                     </CourseContent>
                 </div>
             </div>
@@ -114,13 +117,13 @@ const CoursePage = () => {
                     <SignUpBtn type="text">ĐĂNG KÝ HỌC</SignUpBtn>
                     <ul>
                         <li>
-                            <span>Trình độ cơ bản</span>
+                            <span>Trình độ {level}</span>
                         </li>
                         <li>
-                            <span>Tổng số 163 bài học</span>
+                            <span>Tổng số {lessonNumber} bài học</span>
                         </li>
                         <li>
-                            <span>Thời lượng 29 giờ 57 phút</span>
+                            <span>Thời lượng {length}</span>
                         </li>
                         <li>
                             <span>Học mọi lúc, mọi nơi</span>
@@ -132,4 +135,4 @@ const CoursePage = () => {
     )
 }
 
-export default CoursePage
+export default CouresPageGuest

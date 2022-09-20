@@ -1,9 +1,10 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
     const [numberActive, setNumberActive] = React.useState(0)
-    const value = { numberActive, setNumberActive }
+    const [isUser, setIsUser] = React.useState(true)
+    const value = { numberActive, setNumberActive, isUser, setIsUser }
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }
 export { AppContext }

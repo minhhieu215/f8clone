@@ -11,6 +11,7 @@ align-items:center;
     margin-left:10px;
 }
 position:fixed;
+top:0;
 z-index:1000;
 border-bottom: 1px solid lightgray;
 background-color:white;
@@ -66,5 +67,19 @@ export const SignInCol = styled(Col)`
     }
     .userBlock > div {
         position:relative;
+    }
+`
+export const PublishButton = styled(Button)`
+    color:white;
+    background:${props => props.theme.primaryColor};
+    border-radius:20px;
+    font-weight:500;
+    border:none;
+    margin-right:10px;
+    :hover{
+        color:white;
+    background:${props => props.theme.primaryColor};
+    border:none;
+
     }
 `

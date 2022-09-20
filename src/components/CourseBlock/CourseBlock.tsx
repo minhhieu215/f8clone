@@ -23,7 +23,7 @@ const CourseBlock = () => {
             </HeadingWrap>
             <CourseContainer>
                 {coursePro.map((course) => (
-                    <Course courseName={course.courseName} price={course.price} />
+                    <Course link={course.link} courseName={course.courseName} price={course.price} />
                 ))}
             </CourseContainer>
             <HeadingWrap>
@@ -37,7 +37,12 @@ const CourseBlock = () => {
             </HeadingWrap>
             <CourseContainer>
                 {courseFront.map((course) => (
-                    <Course courseName={course.courseName} price={course.price} numberMember={course.numberMember} />
+                    <Course
+                        link={course.link}
+                        courseName={course.courseName}
+                        price={course.price}
+                        numberMember={course.numberMember}
+                    />
                 ))}
             </CourseContainer>
             <HeadingWrap>
@@ -51,7 +56,12 @@ const CourseBlock = () => {
             </HeadingWrap>
             <CourseContainer>
                 {courseBack.map((course) => (
-                    <Course courseName={course.courseName} price={course.price} numberMember={course.numberMember} />
+                    <Course
+                        link={course.link}
+                        courseName={course.courseName}
+                        price={course.price}
+                        numberMember={course.numberMember}
+                    />
                 ))}
             </CourseContainer>
             <HeadingWrap>

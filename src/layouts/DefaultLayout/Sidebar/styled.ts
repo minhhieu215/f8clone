@@ -14,7 +14,7 @@ margin-top:8px;
 
 `
 
-export const PlusStyled = styled.div`
+export const PlusStyled = styled.div<{isWrite:boolean}>`
 height: 44px;
 background: ${props=>props.theme.blue};
 border-radius: 50%;
@@ -25,8 +25,8 @@ align-items:center;
 justify-content:center;
 font-size: 2.2rem;
 cursor:pointer;
-
-
+transform: ${props=>props.isWrite?"rotate(45deg)":"rotate(0deg)"};
+transition:transform .25s linear;
 &:hover > span{
     transform:scale(1.4);
     transition : transform 0.3s ease ;
@@ -63,3 +63,17 @@ export const LinkStyled = styled.div`
     
 
 `
+
+export const WriteBlogContainer = styled.div`
+    min-width: 200px;
+    color: #444;
+    font-size: 1.4rem;
+    padding: 12px 20px;
+    span{
+        margin-left:16px;
+    }
+    &:hover{
+        background-color:#f0f0f0;
+        cursor:pointer;
+    }
+    `

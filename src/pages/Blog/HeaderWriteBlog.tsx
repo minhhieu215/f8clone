@@ -2,13 +2,13 @@ import { BellFilled, NotificationFilled, SearchOutlined, UserOutlined } from '@a
 import { Button, Col, Dropdown, Row, Typography } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import images from '../../../assets/images'
-import { Notification } from '../../../components/HeaderItem'
-import MyCourse from '../../../components/HeaderItem/MyCourse'
-import { Image } from '../../../components/Image'
-import { AppContext } from '../../../context/AppContext'
-import { ButtonStyled, InputStyled, RowStyled, SignInCol } from './styled'
-const Header = () => {
+import images from '../../assets/images'
+import { Notification } from '../../components/HeaderItem'
+import MyCourse from '../../components/HeaderItem/MyCourse'
+import { Image } from '../../components/Image'
+import { AppContext } from '../../context/AppContext'
+import { ButtonStyled, InputStyled, PublishButton, RowStyled, SignInCol } from './headerstyled'
+const HeaderWriteBlog = ({ canPublish }: { canPublish: boolean }) => {
     const { isUser } = React.useContext(AppContext)
     const [isNotiOn, setIsNotiOn] = React.useState(false)
     const [isMycourse, setIsMycourse] = React.useState(false)
@@ -22,17 +22,13 @@ const Header = () => {
                     Học Lập Trình Để Đi Làm
                 </Typography.Text>
             </Col>
-            <Col span={8}>
-                <InputStyled
-                    prefix={<SearchOutlined className="icon" />}
-                    placeholder="Tìm kiếm khóa học,bài viết,video ,.."
-                />
-            </Col>
+            <Col span={8}></Col>
 
             <SignInCol span={8}>
                 <Row justify="end">
                     {isUser ? (
                         <div className="userBlock">
+                            <PublishButton disabled={!canPublish}>Xuất bản</PublishButton>
                             <div>
                                 <Button
                                     onBlur={() => setIsMycourse(false)}
@@ -65,4 +61,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default HeaderWriteBlog

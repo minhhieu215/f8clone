@@ -1,4 +1,5 @@
 import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import images from '../../assets/images';
 export const CourseContainer = styled.div`
@@ -124,4 +125,8 @@ align-items: center;
     align-items: center;
     gap:12px;
   }
+`
+
+export const LinkStyled = styled(Link)`
+color:black;
 `

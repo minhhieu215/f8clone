@@ -101,7 +101,6 @@ export const CouresPageContainer = styled.div`
 export const TitleStyled = styled.div<{size?:string}>`
     font-size:${props=>props.size||"2rem"};
 font-weight:700;
-margin:16px 0 ;
 
 `
 export const Text = styled.p`
@@ -169,4 +168,59 @@ font-size: 1.6rem;
         background-color: ${props=>props.theme.primaryColor};
         opacity:.8;
     }
+`
+
+//Page user
+export const CoursePageUserContainer = styled.div`
+width: 100%;
+height:100%;
+overflow-y:scroll;
+.video{
+    padding-inline: 8.5%;
+    background:black;
+}
+.heartIcon { 
+    color: #d43c68;
+    height:1rem;
+}
+.poweredWrapper{
+    color: #666;
+    font-size: 1.4rem;
+    padding: 12px 0;
+    text-align: center;
+}
+`
+export const VideoContent = styled.div`
+    padding: 0 8.5%;
+    min-height: 400px;
+    .video_content_top{
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+    .title{
+        font-size: 2.8rem;
+         margin: 48px 0 8px;
+    }
+    .update{
+        font-size: 1.3rem;
+    margin-bottom: 36px;
+    }
+    .takeNoteBtn{
+        font-size: 1.4rem;
+    padding: 12px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color: #ebebeb;
+    border:solid 1px   #ebebeb;
+    :hover{
+    border:solid 1px   #ebebeb;
+        color: black;
+        
+    }
+    }
+ .video_content_bottom{
+    margin:16px 0;
+ }   
 `

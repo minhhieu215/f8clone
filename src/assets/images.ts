@@ -8,6 +8,11 @@
     bannerReact:require('./Banner_web_ReactJS.png'),
     bgHtmlCssPro : require('./bgCourseHtml.png'),
     post1 : require('./post1.png') ,
+    jsImg : require('./js.png') ,
+    lnPathImg1:require('./learningPathImg1.png'),
+    lnPathImg2:require('./learningPathImg2.png'),
+    suggestImg:require('./suggestImg.png'),
+    reactThumb : require('./reactThumnail.png')
 }
 
 export default images
