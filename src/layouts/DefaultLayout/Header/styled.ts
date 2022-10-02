@@ -1,5 +1,5 @@
 import { Button, Col, Input, Row } from 'antd'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 export const RowStyled = styled(Row)`
 
 width:100%;
@@ -66,5 +66,50 @@ export const SignInCol = styled(Col)`
     }
     .userBlock > div {
         position:relative;
+    }
+`
+const fadeIn = keyframes`
+  from {
+    opacity:0 ;
+    transform: translateY(-10%) ;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%) ;
+  }
+`;
+export const Settings = styled.div`
+position:relative;
+:hover >.settingBlock{
+    display:block;
+}
+.settingBlock{
+    position:absolute;
+    min-width: 230px;
+    padding: 8px 24px!important;
+    right:0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 -4px 32px rgba(0,0,0,.2);
+    display:none;
+    animation: ${fadeIn} .3s linear  ;
+}
+.header{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin:12px 0;
+ 
+}
+li{
+        color: #666;
+    display: block;
+    font-size: 1.4rem;
+    padding: 10px 0;
+    cursor:pointer;
+    :hover { 
+        color:#333;
+    }
     }
 `

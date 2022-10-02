@@ -8,18 +8,21 @@ import { ThemeProvider } from 'styled-components'
 import App from './App'
 import GlobalStyles from './components/GlobalStyles/GlobalStyles'
 import AppProvider from './context/AppContext'
+import AuthProvider from './context/AuthContext'
 import './index.css'
 import theme from './theme'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <AppProvider>
-                <ThemeProvider theme={theme}>
-                    <GlobalStyles />
-                    <App />
-                </ThemeProvider>
-            </AppProvider>
+            <AuthProvider>
+                <AppProvider>
+                    <ThemeProvider theme={theme}>
+                        <GlobalStyles />
+                        <App />
+                    </ThemeProvider>
+                </AppProvider>
+            </AuthProvider>
         </BrowserRouter>
     </React.StrictMode>
 )

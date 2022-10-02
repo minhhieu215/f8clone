@@ -1,14 +1,21 @@
-import React, { useState } from 'react'
-import { Background, Container, Title, ButtonGroup, ButtonStyled, ContentStyled, NotAccount, Footer } from './styled'
-import images from '../../assets/images'
-import { Button, Typography } from 'antd'
-import { Image } from '../../components/Image'
 import { FacebookFilled, GithubFilled, GoogleOutlined, UserOutlined } from '@ant-design/icons'
-import { Link } from 'react-router-dom'
+import { Button, Typography } from 'antd'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import images from '../../assets/images'
+import { Image } from '../../components/Image'
+import { signInWithGoogle } from '../../firebase/service'
+import { Background, ButtonGroup, ButtonStyled, Container, ContentStyled, Footer, NotAccount, Title } from './styled'
 interface IProps {
     type: string
 }
+
 const AuthLayout: React.FC<IProps> = ({ type = 'singin' }) => {
+    const navigate = useNavigate()
+    const handleSignUp = () => {
+        signInWithGoogle()
+    }
+    const handleSignIn = () => {}
     return (
         <Background>
             <Container>
@@ -16,11 +23,11 @@ const AuthLayout: React.FC<IProps> = ({ type = 'singin' }) => {
                     <Image img={images.logoImg} type="logo" />
                     <Title>{type == 'signin' ? 'Chào mừng đến với F8' : 'Đăng kí tài khoản F8'}</Title>
                     <ButtonGroup>
-                        <ButtonStyled>
-                            <UserOutlined className="icon" />
-                            <span className="text">Sử dụng email / số điện thoại</span>
-                        </ButtonStyled>
-                        <ButtonStyled>
+                        <ButtonStyled
+                            onClick={() => {
+                                handleSignUp()
+                            }}
+                        >
                             <GoogleOutlined className="icon" />
                             <span className="text">Tiếp tục với Google</span>
                         </ButtonStyled>
